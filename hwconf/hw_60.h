@@ -30,6 +30,7 @@
 
 // HW properties
 #define HW_HAS_DRV8301
+#define HW_HAS_NO_CAN
 #define HW_HAS_3_SHUNTS
 #define HW_HAS_PHASE_SHUNTS
 #if !defined(HW60_IS_MK3) && !defined(HW60_IS_MK4)
@@ -182,17 +183,17 @@
 #define HW_UART_RX_PORT			GPIOB
 #define HW_UART_RX_PIN			11
 
-#if defined(HW60_IS_MK3) || defined(HW60_IS_MK4)
-// Permanent UART Peripheral (for NRF51)
-#define HW_UART_P_BAUD			115200
-#define HW_UART_P_DEV			SD4
-#define HW_UART_P_DEV_TX		SD5 // UART for TX, due to mistake below
-#define HW_UART_P_GPIO_AF		GPIO_AF_UART4
-#define HW_UART_P_TX_PORT		GPIOC
-#define HW_UART_P_TX_PIN		12 // This is a mistake in the HW. We have to use a hack to use UART5.
-#define HW_UART_P_RX_PORT		GPIOC
-#define HW_UART_P_RX_PIN		11
-#endif
+// #if defined(HW60_IS_MK3) || defined(HW60_IS_MK4)
+// // Permanent UART Peripheral (for NRF51)
+// #define HW_UART_P_BAUD			115200
+// #define HW_UART_P_DEV			SD4
+// #define HW_UART_P_DEV_TX		SD5 // UART for TX, due to mistake below
+// #define HW_UART_P_GPIO_AF		GPIO_AF_UART4
+// #define HW_UART_P_TX_PORT		GPIOC
+// #define HW_UART_P_TX_PIN		12 // This is a mistake in the HW. We have to use a hack to use UART5.
+// #define HW_UART_P_RX_PORT		GPIOC
+// #define HW_UART_P_RX_PIN		11
+// #endif
 
 // ICU Peripheral for servo decoding
 #define HW_USE_SERVO_TIM4
@@ -291,13 +292,13 @@
 #define IMU_ROT_180
 #endif
 
-#if defined(HW60_IS_MK3) || defined(HW60_IS_MK4)
-// NRF SWD
-#define NRF5x_SWDIO_GPIO		GPIOB
-#define NRF5x_SWDIO_PIN			12
-#define NRF5x_SWCLK_GPIO		GPIOA
-#define NRF5x_SWCLK_PIN			4
-#endif
+// #if defined(HW60_IS_MK3) || defined(HW60_IS_MK4)
+// // NRF SWD
+// #define NRF5x_SWDIO_GPIO		GPIOB
+// #define NRF5x_SWDIO_PIN			12
+// #define NRF5x_SWCLK_GPIO		GPIOA
+// #define NRF5x_SWCLK_PIN			4
+// #endif
 
 // Measurement macros
 #define ADC_V_L1				ADC_Value[ADC_IND_SENS1]
